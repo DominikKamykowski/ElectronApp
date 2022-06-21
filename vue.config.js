@@ -4,6 +4,7 @@ module.exports = defineConfig({
     pluginOptions: {
         electronBuilder: {
             preload: 'src/background_tasks/preload.js',
+            externals: ['serialport']
         }
     }
 })

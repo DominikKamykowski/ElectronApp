@@ -20,6 +20,7 @@ function createSocket(host, port) {
             if (rinfo.size > 0 && globalWin && eth_config.is_enabled) {
                 globalWin.webContents.send('config:eth:data', msg);
                 console.log(msg)
+                
             }
         });
         socket.bind(port, host);

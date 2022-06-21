@@ -4,6 +4,7 @@ import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 import initETH from './background_tasks/eth'
+import initRS232 from './background_tasks/rs232'
 const isDevelopment = process.env.NODE_ENV !== 'production'
 const path = require('path')
 
@@ -69,6 +70,7 @@ app.on('ready', async () => {
   }
   createWindow()
   initETH(win)
+  initRS232(win)
 })
 
 // Exit cleanly on request from parent process in development mode.
